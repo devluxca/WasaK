@@ -2,7 +2,7 @@
   <img src="https://alivemindset.github.io/projects/WasaK/img/WasaK.png" width="150px"><br/>
   Language:<br/>
   <a href="README-PTBR.md">Português-BR</a> | 
-  <a href="#"><b><i>English</i></b></a> | 
+  <b><i>English</i></b> | 
   <a href="README-ES.md">Spanish</a><br/><br/>
   <img src="https://img.shields.io/badge/version-1.0-blue.svg"> &nbsp;
   <img src="https://img.shields.io/badge/python-2.7.12-blue.svg"> &nbsp;
