@@ -58,6 +58,30 @@ After running the above command we need to run the program. To do this, run the 
 </ul>
 <p align="center"><img src="https://alivemindset.github.io/projects/WasaK/img/exServer.png" width="600px"></p>
 
+<h2>Commands</h2>
+<h3>Types of commands</h3>
+<ul>
+<li><b>#</b>command</li>
+<li><b>!</b>command</li>
+<li><b>$</b>command</li>
+</ul>
+
+<h3>Command: #</h3>
+The commands started with "#" will be executed on the client machine and will be informed only to the client.
+
+<h3>Command: !</h3>
+The commands started with "!" Will run on the server machine and will return the result for all.
+
+<h3>Command: $</h3>
+Commands starting with "$" are server-specific. Some commands:
+<ul>
+<li><b>$</b>help</li>
+<li><b>$</b>users</li>
+<li><b>$</b>travar-alvo http://alvo.com</li>
+<li><b>$</b>alvo-travado</li>
+<li><b>$</b>destravar-alvo</li>
+</ul>  
+
 <h3>Errors/Bugs</h3>
 If you find errors or bugs, please report us by: 
 <ul>
