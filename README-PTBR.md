@@ -55,6 +55,33 @@ Após executar o comando informado a cima, nós precisamos executar o programa. 
 </ul>
 <p align="center"><img src="https://alivemindset.github.io/projects/WasaK/img/exServer.png" width="600px"></p>
 
+<h2>Comandos</h2>
+<h3>Tipos de comandos/h3>
+<ul>
+<li><b>#</b>comando</li>
+<li><b>!</b>comando</li>
+<li><b>$</b>comando</li>
+</ul>
+
+<h3>Comando: #</h3>
+Os comandos que começam com "#" será executado na máquina do cliente e será informado apenas ao cliente.
+
+<h3>Comando: !</h3>
+Os comandos começaram com "!" Será executado na máquina do servidor e retornará o resultado para todos.
+
+<h3>Comando: $</h3>
+Comandos que começam com "$" são específicos do servidor. Alguns comandos:
+<ul>
+<li><b>$</b>help</li>
+<li><b>$</b>users</li>
+<li><b>$</b>travar-alvo http://alvo.com</li>
+<li><b>$</b>alvo-travado</li>
+<li><b>$</b>destravar-alvo</li>
+</ul>  
+<p align="center">
+<img src="https://alivemindset.github.io/projects/WasaK/img/exCommand.png" width="600">
+</p>
+
 <h3>Errors/Bugs</h3>
 Se achar erros ou bugs, nos informe por: 
 <ul>
