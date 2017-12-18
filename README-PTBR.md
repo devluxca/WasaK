@@ -56,7 +56,7 @@ Após executar o comando informado a cima, nós precisamos executar o programa. 
 <p align="center"><img src="https://alivemindset.github.io/projects/WasaK/img/exServer.png" width="600px"></p>
 
 <h2>Comandos</h2>
-<h3>Tipos de comandos/h3>
+<h3>Tipos de comandos</h3>
 <ul>
 <li><b>#</b>comando</li>
 <li><b>!</b>comando</li>
