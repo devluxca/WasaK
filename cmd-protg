@@ -1,5 +1,6 @@
 clear
 mkdir
+rmdir
 rm
 touch
 ngrok
@@ -15,6 +16,7 @@ shutdown
 cat
 sudo clear
 sudo mkdir
+sudo rmdir
 sudo rm
 sudo touch
 sudo ngrok
