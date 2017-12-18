@@ -81,7 +81,9 @@ Commands starting with "$" are server-specific. Some commands:
 <li><b>$</b>alvo-travado</li>
 <li><b>$</b>destravar-alvo</li>
 </ul>  
-<img src="https://alivemindset.github.io/projects/WasaK/img/exCommand.png">
+<p align="center">
+<img src="https://alivemindset.github.io/projects/WasaK/img/exCommand.png" width="600">
+</p>
 
 <h3>Errors/Bugs</h3>
 If you find errors or bugs, please report us by: 
