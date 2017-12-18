@@ -1,0 +1,30 @@
+clear
+mkdir
+rm
+touch
+ngrok
+echo
+nano
+vi
+subl
+leafpad
+reboot
+halt
+wget
+shutdown
+cat
+sudo clear
+sudo mkdir
+sudo rm
+sudo touch
+sudo ngrok
+sudo echo
+sudo nano
+sudo vi
+sudo subl
+sudo leafpad
+sudo reboot
+sudo halt
+sudo wget
+sudo shutdown
+sudo cat
