@@ -9,6 +9,11 @@ try:
     import os
     import sys
     import datetime
+    import random
+    import time
+    import base64
+    from md5 import md5
+    from Crypto.Cipher import AES
 except Exception as err:
     print("ERRO: "+str(err))
     print("Não conseguimos importar as bibliotecas.")
@@ -43,6 +48,7 @@ if commands.getoutput('whoami') != "root":      #Se o usuario não for ROOT, nã
 alvo = 'Nenhum'
 users=[]
 usersNick = []
+cm = ''
 
 try:            #Tente
     #################### PEGANDO O IP ####################
@@ -97,6 +103,31 @@ except EOFError:    #CTRL+D
 except KeyboardInterrupt:   #CTRL+C
     print '\n[\033[31m-\033[0;1m] Saindo do servidor...'
     exit()
+
+def rej(s, block_size):
+    return s.ljust(len(s) + block_size - (len(s) % block_size))
+
+def criarKey():
+    n = random.choice(range(0, 100))
+    l = random.choice(
+        ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+         'x', 'y', 'z'])
+    cm = str(n) + l
+    for i in range(0, 10):
+        ul = random.choice([True, False])
+        n = random.choice(range(0, 100))
+        l = random.choice(
+            ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+             'v',
+             'x', 'y', 'z'])
+        if ul == True:
+            l = l.upper()
+        else:
+            l = l.lower()
+        cm = cm + str(n) + str(l)
+    return cm
+cm = criarKey()
+aes = AES.new(md5(cm).digest(), AES.MODE_ECB)
 
 def commandexec(nome,commandf, tipo):
     global msgpenv
@@ -179,11 +210,14 @@ def userth(conn, addr):
     \033[0;0m
            \033[1mUsuarios online: %i"""% len(users)+"""          Alvo travado: %s
     """ % alvo
+    conn.send('@KeyWasak>'+base64.b64encode(cm))
+    time.sleep(2)
     conn.send(bemvindo)
 
     while True:
             try:
                 msg = conn.recv(4096)
+                msg = aes.decrypt(msg).strip()
                 if len(msg) >= 1:
                     print "[ "+str(datetime.datetime.utcnow())+" ] " + msg.rstrip()
 
@@ -222,12 +256,14 @@ def enviodemsgs(message,connection, verif):
         if verif == False:
             if clients!=connection:
                 try:
+                    message = aes.encrypt(rej(message, AES.block_size))
                     clients.send(message)
                 except:
                     clients.close()
                     remove(clients)
         else:
             try:
+                message = aes.encrypt(rej(message, AES.block_size))
                 clients.send(message)
             except:
                 clients.close()
