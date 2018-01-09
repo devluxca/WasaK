@@ -8,9 +8,13 @@ try:
     import os
     import time
     import random
+    import base64
+    from md5 import md5
+    from Crypto.Cipher import AES
 except Exception as err:
     print("ERRO: "+err)
     print("Não conseguimos importar as bibliotecas.")
+
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 os.system('clear')
@@ -68,6 +72,10 @@ except KeyboardInterrupt:
     print '\n[\033[31m-\033[0;1m] Saindo do cliente...'
     exit()
 
+
+def rej(s, block_size):
+    return s.ljust(len(s) + block_size - (len(s) % block_size))
+
 ant = False
 while True:
     try:
@@ -86,6 +94,16 @@ while True:
                     print '[\033[31m-\033[0;1m] Volte logo ' + nome
                     server.close()
                     exit()
+                elif str(message).rstrip().startswith('@KeyWasak>'):
+                    keyCript = message.split('>')[1]
+                    keyCript = base64.b64decode(str(keyCript).rstrip())
+                    continue
+                else:
+                    try:
+                        aes = AES.new(md5(keyCript).digest(), AES.MODE_ECB)
+                        message = aes.decrypt(message).strip()
+                    except ValueError:
+                        message=message
                 print '\n '+message
                 ant = True
                 print " \033[1m\033[31m"+nome+"\033[0;0m» ",
@@ -111,7 +129,13 @@ while True:
                 if message.lower().rstrip() == '':
                     continue
 
-                server.send(nome+"» "+message)
+                message = nome+"» "+message
+
+                aes = AES.new(md5(keyCript).digest(), AES.MODE_ECB)
+
+                msgEncrip = aes.encrypt(rej(message, AES.block_size))
+
+                server.send(msgEncrip)
                 sys.stdout.flush()
     except KeyboardInterrupt:
         server.send('@-'+nome)
@@ -123,5 +147,7 @@ while True:
         print '\n\n[\033[31m-\033[0;1m] Volte logo ' + nome
         server.close()
         exit()
+    except TypeError:
+        continue
 
 server.close()
