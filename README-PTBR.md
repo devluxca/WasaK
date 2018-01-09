@@ -4,7 +4,7 @@
   <b><i>Português-BR</b></i> | 
   <a href="README.md">English</a> | 
   <a href="README-ES.md">Spanish</a><br/><br/>
-  <img src="https://img.shields.io/badge/version-1.0-blue.svg"> &nbsp;
+  <img src="https://img.shields.io/badge/version-1.2-blue.svg"> &nbsp;
   <img src="https://img.shields.io/badge/python-2.7.12-blue.svg"> &nbsp;
   <img src="https://img.shields.io/badge/OS-Linux-brightgreen.svg">
 </p>
