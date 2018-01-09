@@ -12,7 +12,7 @@ try:
     from md5 import md5
     from Crypto.Cipher import AES
 except Exception as err:
-    print("ERRO: "+err)
+    print("ERRO: "+str(err))
     print("Não conseguimos importar as bibliotecas.")
 
 
