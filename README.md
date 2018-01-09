@@ -22,6 +22,7 @@ I always wanted to talk to my friends without anyone monitoring us, or the conve
 <li>OS Linux</li>
 <li>Wget</li>
 <li>Git</li>
+<li>PyCrypto</li>
 </ul>
 
 <h3>How to install the client</h3>
