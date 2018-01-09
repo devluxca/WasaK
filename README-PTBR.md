@@ -22,6 +22,7 @@ Eu sempre quis conversar com meus amigos sem que alguém nos monitorassem, ou a 
 <li>OS Linux</li>
 <li>Wget</li>
 <li>Git</li>
+<li>PyCrypto</li>
 </ul>
 <h3>Como instalar o cliente</h3>
 Basta executar o comando abaixo em seu terminal.
